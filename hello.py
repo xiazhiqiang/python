@@ -80,3 +80,48 @@ s = set([1, 1, 2, 2, 3, 4])
 print(s)
 s.add(1)
 print(s)
+
+# ----------------------------------------------------------------
+
+
+def compare(a, b):
+    inta = int(a)
+    intb = int(b)
+    if inta > intb:
+        return 1
+    elif inta < intb:
+        return -1
+    else:
+        return 0
+
+
+ret = compare(10, 20)
+print("比较{0}与{1}".format(10, 20) + "的结果：", ret)
+
+
+def nop():
+    pass
+
+
+print(nop())
+
+import math
+
+
+def quadratic(a, b, c):
+    tmp1 = math.pow(b, 2) - 4 * a * c
+    if tmp1 < 0:
+        raise TypeError("方程无实根")
+    else:
+        return (-b + math.sqrt(tmp1)) / 2 * a, (-b - math.sqrt(tmp1)) / 2 * a
+
+
+print(quadratic(2, 3, 1))
+
+
+def f1(a, b, c=0, *args, **kw):
+    print("a=", a, "b=", b, "c=", c, "args=", args, "kw=", kw)
+
+
+f1(1, 2, 3, 99, d=10)
+f1(*(1, 2, 3, 99), **{d: 10})
