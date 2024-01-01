@@ -147,3 +147,63 @@ def findMinAndMax(L):
 
 
 print(findMinAndMax([]) != (None, None))
+
+# ----------------------------------------------------------------
+
+
+def is_odd(value):
+    return value % 2 == 1
+
+
+print(filter(is_odd, range(1, 10)))
+
+L = [("Bob", 75), ("Adam", 92), ("Bart", 66), ("Lisa", 88)]
+print(sorted(L, key=lambda t: t[1]))
+print(sorted(L, key=lambda t: t[0]))
+
+
+def createCounter():
+    num = 0
+
+    def counter():
+        nonlocal num
+        num = num + 1
+        return num
+
+    return counter
+
+
+counterA = createCounter()
+print(counterA(), counterA(), counterA())
+
+# ----------------------------------------------------------------
+
+import functools
+import time
+
+
+def metric(fn):
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        start = round(time.time() * 1000)
+        result = fn(*args, **kwargs)
+        end = round(time.time() * 1000)
+        print("%s executed in %s ms" % (fn.__name__, end - start))
+        return result
+
+    return wrapper
+
+
+@metric
+def fast(x, y):
+    time.sleep(0.0012)
+    return x + y
+
+
+print(fast(1, 2))
+
+# ----------------------------------------------------------------
+
+import mod
+
+mod.hello()
