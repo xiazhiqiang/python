@@ -27,6 +27,9 @@ list.pop(2)
 print(list)
 list.insert(1, "John")
 print(list)
+print("list 截取到索引2", list[:2])
+list2 = list[:]
+print("list2", list2)
 
 # ----------------------------------------------------------------
 
@@ -125,3 +128,22 @@ def f1(a, b, c=0, *args, **kw):
 
 f1(1, 2, 3, 99, d=10)
 f1(*(1, 2, 3, 99), **{"d": 10})
+
+# ----------------------------------------------------------------
+
+
+# 查找列表中的最小值和最大值
+def findMinAndMax(L):
+    if len(L) == 0:
+        return (None, None)
+    min = L[0]
+    max = L[0]
+    for value in L:
+        if value > max:
+            max = value
+        if value < min:
+            min = value
+    return (min, max)
+
+
+print(findMinAndMax([]) != (None, None))
