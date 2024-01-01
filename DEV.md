@@ -117,5 +117,25 @@
 - 函数迭代主要是能够遍历 list、tuple 和 dict 类型的元素
 - for in 语句可以遍历读取 list 和 tuple 的每个元素，若需要遍历 dict 类型的值，需要 for in dict.values()
 - 列表遍历如果想要同时读取索引及值，可使用 for index,value in enumerate(['A', 'B', 'C'])
+- 字典遍历如果想要同时读取 key 及 value，可使用 for key,value in {"x": "a", "y": "b"}.items()
 - 字符串也可使用迭代方法遍历读取每个字符
 - 判断变量是否是可迭代，可使用 from collections.abc import Iterable;isinstance('abc', Iterable)
+
+### 列表生成式
+
+- 列表生成式用于创建列表时使用
+- range 函数能够快速创建列表数组
+- list(range(1, 11))
+- [x * x for x in range(1, 11) if x % 2 == 0]
+
+### 迭代器
+
+- 如果一个函数定义中包含 yield 关键字，那么这个函数就不再是一个普通函数，而是一个 generator 函数
+
+### 高阶函数
+
+- 函数本身也可以赋值给变量，即：变量可以指向函数。
+- 由于 abs 函数实际上是定义在 import builtins 模块中的，所以要让修改 abs 变量的指向在其它模块也生效，要用 import builtins; builtins.abs = 10
+- 一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。
+- map 和 reduce 函数可以针对 list 进行处理，map()函数接收两个参数，一个是函数，一个是 Iterable，返回值也是一个 Iterable
+- filter 函数用于过滤序列 list
