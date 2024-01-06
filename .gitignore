@@ -1,2 +1,4 @@
 __pycache__
-.poetry.lock
+.pytest_cache
+poetry.lock
+dist
