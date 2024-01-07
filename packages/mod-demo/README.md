@@ -1,25 +1,15 @@
 # miles-mod-demo
 
-## 本地安装
+## 安装
 
 ```sh
-poetry install
+poetry add miles-mod-demo
 ```
 
-## 本地构建
+## 使用模块
 
-```sh
-poetry build
-```
+```python
+from mod_demo import hello
 
-## 本地测试
-
-```sh
-poetry run pytest
-```
-
-## 本地发布
-
-```sh
-poetry publish
+print(hello.getName())
 ```
