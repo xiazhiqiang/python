@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from demo import hello
+from mod_demo import hello
 
 
 def test_hello():

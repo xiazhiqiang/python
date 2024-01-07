@@ -3,6 +3,6 @@
 
 __author__ = "Miles"
 
+from mod_demo import hello
 
-def getName():
-    return "Hello World"
+print(hello.getName())
