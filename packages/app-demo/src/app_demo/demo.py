@@ -4,5 +4,7 @@
 __author__ = "Miles"
 
 from mod_demo import hello
+from mod_demo2 import index
 
 print(hello.getName())
+print(index.getAge())
